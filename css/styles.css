@@ -16,7 +16,7 @@ html, body {
 }
 
 #chart-holder {
-  opacity: 0.5;
+  opacity: 0.4;
   mix-blend-mode: darken;
   width: 400px;
   height: 400px;

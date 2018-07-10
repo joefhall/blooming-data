@@ -3,13 +3,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=0.5">
   <title>User-generated organisations - Joe Hall - 360 Giving data visualisation challenge</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="css/styles.css">
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
   <script src="js/flowers.js"></script>
+  <script src="js/funding.js"></script>
   <script src="js/piecharts.js"></script>
   <script src="js/video.js"></script>
 </head>
@@ -19,7 +20,7 @@
     
     <div class="row w-100 h-100 justify-content-center align-items-center">
       <div id="vis-holder" class="col-xs-12 visualisation position-relative">
-        <video id="video" muted class="visualisation position-absolute" poster="" controls>
+        <video id="video" muted="true" class="visualisation position-absolute" poster="" controls autoplay playsinline>
           <source src="video/flowers-blooming.mp4" type="video/mp4" poster="data:image/gif,AAAA">
         </video>
         <div id="chart-holder" class="position-absolute">

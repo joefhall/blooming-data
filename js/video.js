@@ -18,6 +18,10 @@ function getFlowerByTime(time) {
 }
 
 $(document).ready(function() {
+  $('#video').on('canplay', function() {
+    $('#video')[0].play();
+  });
+  
   $('#video').on('timeupdate', function() {
     video.currentTime = this.currentTime;
     
@@ -36,7 +40,10 @@ $(document).ready(function() {
         !video.pieDying) {
       createPieChart();
     }
-    
-    console.log(video.currentFlower);
+  });
+  
+  $('#video').on('ended', function() {
+    this.currentTime = flowers[0].start;
+    this.play();
   });
 });

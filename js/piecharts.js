@@ -2,7 +2,7 @@ pieChartOptions = {
   colours: ['red', 'blue', 'green', 'yellow', 'gray', 'orange', 'purple'],
   options: {
     animation: {
-      animateScale: true
+      animateScale: false
     },
     legend: {
       display: false
