@@ -11,7 +11,12 @@ html, body {
   height: 720px;
 }
 
+#vis-holder {
+  overflow: hidden;
+}
+
 #chart-holder {
+  opacity: 0.5;
   mix-blend-mode: darken;
   width: 400px;
   height: 400px;
