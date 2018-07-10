@@ -1,0 +1,12 @@
+html, body {
+  height: 100%;
+}
+
+.bg-black {
+  background-color: black;
+}
+
+.720p {
+  width: 1280px;
+  height: 720px;
+}
