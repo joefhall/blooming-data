@@ -1,14 +1,19 @@
-$(document).ready(function() {
-  var ctx = document.getElementById('chart').getContext('2d');
-  
-//   var gradient = ctx.createRadialGradient(75,50,5,90,60,100);
-//   gradient.addColorStop(0,"red");
-//   gradient.addColorStop(1,"white");
-  
-  var data = {
+pieChartOptions = {
+  colours: ['red', 'blue', 'green', 'yellow', 'gray', 'orange', 'purple'],
+  options: {
+    animation: {
+      animateScale: true
+    },
+    legend: {
+      position: 'left'
+    }
+  },
+};
+
+data = {
     datasets: [{
       data: [10, 20, 30],
-      backgroundColor: ['red', 'blue', 'green'],
+      backgroundColor: pieChartOptions.colours,
     }],
 
     labels: [
@@ -17,16 +22,24 @@ $(document).ready(function() {
         'C'
     ]
   };
-  
-  var options = {
-    animation: {
-      animateScale: true
-    },
-  };
-  
-  var myPieChart = new Chart(ctx,{
+
+//   gradient = ctx.createRadialGradient(75,50,5,90,60,100);
+//   gradient.addColorStop(0,"red");
+//   gradient.addColorStop(1,"white");
+
+function createPieChart() {
+  pieChart = new Chart(ctx,{
     type: 'pie',
     data: data,
-    options: options
+    options: pieChartOptions.options
   });
+}
+
+function destroyPieChart() {
+  pieChart.destroy();
+}
+
+$(document).ready(function() {
+  ctx = $('#chart')[0].getContext('2d');
+  createPieChart();
 });
