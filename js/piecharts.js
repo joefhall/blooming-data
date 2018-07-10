@@ -41,5 +41,4 @@ function destroyPieChart() {
 
 $(document).ready(function() {
   ctx = $('#chart')[0].getContext('2d');
-  createPieChart();
 });
