@@ -1,9 +1,65 @@
+fundingCurrentData = {
+  type: null,
+  name: null,
+  data: {}
+};
+
+fundingDataTypes = ['funder', 'theme'];
+
+fundingThemes = {
+  asylum: 'Refugees and asylum seekers',
+  children: 'Children',
+  disabled: 'Disabled people',
+  elderly: 'Older people',
+  ethnic: 'Ethnic minorities',
+  women: 'Women'
+};
+
+function getRandomFundingData() {
+  fundingCurrentData.type = fundingDataTypes[Math.round(Math.random())];
+  
+  switch (fundingCurrentData.type) {
+    case 'funder':
+      fundingCurrentData.name = getRandomFunder();
+      fundingCurrentData.data = getFundingByFunder(fundingCurrentData.name);
+      break;
+    case 'theme':
+      fundingCurrentData.name = getRandomTheme();
+      fundingCurrentData.data = getFundingByTheme(fundingCurrentData.name);
+      break;
+  }
+}
+
+function getRandomFunder() {
+  var funders = [];
+  
+  for (var i = 0; i < funding.length; i++) {
+    if ($.inArray(funding[i].org, funders)) {
+      funders.push(funding[i].org);
+    }
+  }
+  
+  return funders[Math.floor(Math.random() * funders.length)];
+}
+
+function getRandomTheme() {
+  var themes = [];
+  
+  for (var i = 0; i < funding.length; i++) {
+    if ($.inArray(funding[i].theme, themes)) {
+      themes.push(funding[i].theme);
+    }
+  }
+  
+  return themes[Math.floor(Math.random() * themes.length)];
+}
+
 function getFundingByFunder(funder) {
   funderResults = {};
   
   for (var i = 0; i < funding.length; i++) {
     if (funding[i].org === funder) {
-      funderResults[funding[i].theme] = funding[i].amount;
+      funderResults[fundingThemes[funding[i].theme]] = funding[i].amount;
     }
   }
   
@@ -21,15 +77,6 @@ function getFundingByTheme(theme) {
   
   return themeResults;
 }
-
-fundingThemes = {
-  asylum: "Refugees and asylum seekers",
-  children: "Children",
-  disabled: "Disabled people",
-  elderly: "Older people",
-  ethnic: "Ethnic minorities",
-  women: "Women"
-};
 
 funding = [
   { org: "A B Charitable Trust", amount: 527500, theme: "asylum" },

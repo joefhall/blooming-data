@@ -16,6 +16,12 @@
 </head>
 <body class="bg-black">
   
+  <script>
+    for (var i = 0; i < pieChartOptions.colours.length; i++) {
+      document.write('<span style="background-color: ' + pieChartOptions.colours[i] + ';">' + pieChartOptions.colours[i] + '</span> ');
+    }
+  </script>
+  
   <div class="container-fluid h-100">
     
     <div class="row w-100 h-100 justify-content-center align-items-center">
@@ -25,6 +31,8 @@
         </video>
         <div id="chart-holder" class="position-absolute">
           <canvas id="chart"></canvas>
+        </div>
+        <div id="chart-tooltip" class="position-absolute">
         </div>
       </div>
     </div>
