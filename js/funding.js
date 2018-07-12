@@ -30,27 +30,32 @@ function getRandomFundingData() {
   }
 }
 
-function getRandomFunder() {
-  var funders = [];
-  
+function getAllFunders() {
   for (var i = 0; i < funding.length; i++) {
-    if ($.inArray(funding[i].org, funders)) {
+    if ($.inArray(funding[i].org, funders) === -1) {
       funders.push(funding[i].org);
     }
   }
   
-  return funders[Math.floor(Math.random() * funders.length)];
+  funders.sort();
 }
 
-function getRandomTheme() {
-  var themes = [];
-  
+function getAllThemes() {
   for (var i = 0; i < funding.length; i++) {
-    if ($.inArray(funding[i].theme, themes)) {
+    console.log(funding[i].theme, themes, $.inArray(funding[i].theme, themes));
+    if ($.inArray(funding[i].theme, themes) === -1) {
       themes.push(funding[i].theme);
     }
   }
   
+  themes.sort();
+}
+
+function getRandomFunder() {
+  return funders[Math.floor(Math.random() * funders.length)];
+}
+
+function getRandomTheme() {
   return themes[Math.floor(Math.random() * themes.length)];
 }
 
@@ -308,3 +313,26 @@ funding = [
   { org: "Wiltshire Community Foundation", amount: 1495, theme: "women" },
   { org: "Woodward Charitable Trust", amount: 13000, theme: "women" },
 ];
+
+funders = [];
+themes = [];
+getAllFunders();
+getAllThemes();
+
+$(document).ready(function() {
+  for (var i = 0; i < funders.length; i++) {
+    $('#funders').append($('<option>', {
+      value: funders[i],
+      text: funders[i]
+    }));
+  }
+  
+  for (var j = 0; j < themes.length; j++) {
+    $('#themes').append($('<option>', {
+      value: fundingThemes[themes[j]],
+      text: fundingThemes[themes[j]].toLowerCase()
+    }));
+  }
+  
+  $('select').niceSelect();
+});

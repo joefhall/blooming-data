@@ -6,26 +6,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=0.5">
   <title>User-generated organisations - Joe Hall - 360 Giving data visualisation challenge</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/nice-select.css">
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
   <script src="js/flowers.js"></script>
   <script src="js/funding.js"></script>
+  <script src="js/jquery.nice-select.js"></script>
   <script src="js/piecharts.js"></script>
   <script src="js/video.js"></script>
 </head>
 <body class="bg-black">
   
   <script>
-    for (var i = 0; i < pieChartOptions.colours.length; i++) {
-      document.write('<span style="background-color: ' + pieChartOptions.colours[i] + ';">' + pieChartOptions.colours[i] + '</span> ');
-    }
+//     for (var i = 0; i < pieChartOptions.colours.length; i++) {
+//       document.write('<span style="background-color: ' + pieChartOptions.colours[i] + ';">' + pieChartOptions.colours[i] + '</span> ');
+//     }
   </script>
   
   <div class="container-fluid h-100">
     
     <div class="row w-100 h-100 justify-content-center align-items-center">
       <div id="vis-holder" class="col-xs-12 visualisation position-relative">
+        <div id="controls" class="position-absolute">
+          <div id="controls-title">
+            User-led organisations
+          </div>
+          <div id="controls-themes">
+            run by 
+            <div class="d-inline-block">
+              <select id="themes">
+                <option value="">anyone</option>
+              </select>
+            </div>
+          </div>
+          <div id="controls-funders">
+            funded by 
+            <div class="d-inline-block">
+              <select id="funders">
+                <option value="">anyone</option>
+              </select>
+            </div>
+          </div>
+          
+        </div>
         <video id="video" muted="true" class="visualisation position-absolute" poster="" controls autoplay playsinline>
           <source src="video/flowers-blooming.mp4" type="video/mp4" poster="data:image/gif,AAAA">
         </video>

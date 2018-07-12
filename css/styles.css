@@ -1,5 +1,6 @@
 html, body {
   height: 100%;
+  font-family: 'Courgette', sans-serif;
 }
 
 .bg-black {
@@ -15,8 +16,35 @@ html, body {
   overflow: hidden;
 }
 
+#controls {
+  z-index: 100;
+  opacity: 1;
+  top: 100px;
+  left: 100px;
+  font-size: 40px;
+  color: white;
+}
+
+#controls-themes, #controls-funders, .nice-select {
+  font-size: 20px !important;
+}
+
+.nice-select, .nice-select .list {
+  background-color: rgba(0, 0, 0, 0.5) !important;
+  color: white !important;
+}
+
+.nice-select .option:hover, .nice-select .option.focus, .nice-select .option.selected.focus {
+  background-color: rgba(255, 255, 255, 0.5) !important;
+  color: black !important;
+}
+
+#themes, #funders {
+  display: inline;
+}
+
 #chart-holder {
-  opacity: 0.7;
+  opacity: 0.9;
   mix-blend-mode: hue;
   width: 400px;
   height: 400px;
@@ -29,7 +57,6 @@ html, body {
   padding: 5px;
   border-radius: 5px;
   background-color: rgba(255,255,255,0.7);
-  font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
   color: black;
   top: 660px;
