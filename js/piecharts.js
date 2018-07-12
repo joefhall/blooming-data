@@ -24,7 +24,8 @@ pieChartOptions = {
       custom: function(tooltipModel) {
         if (tooltipModel.hasOwnProperty('body')) {
           console.log(tooltipModel.body[0].lines);
-          $('#chart-tooltip').text(tooltipModel.body[0].lines[0]);
+          var tooltipText = tooltipModel.body[0].lines[0].split(': ');
+          $('#chart-tooltip').text(tooltipText[0] + ': £' + parseInt(tooltipText[1]).toLocaleString());
           $('#chart-tooltip').show();
         } else {
           $('#chart-tooltip').text('');
