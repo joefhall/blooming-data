@@ -1,9 +1,8 @@
 flowers = [
   {
     description: 'Yellow large flower',
-    keyColour: '',
-    start: 5.1,
-    stop: 12.1,
+    start: 5.2,
+    stop: 18,
     pie: {
       centre: {
         left: 725 * 1.11,
@@ -14,38 +13,35 @@ flowers = [
   },
   {
     description: 'White daffodil',
-    keyColour: '',
-    start: 13.4,
-    stop: 21.2,
+    start: 21.1,
+    stop: 36,
     pie: {
       centre: {
-        left: 616 * 1.11,
-        top: 282 * 1.11,
+        left: 600 * 1.11,
+        top: 300 * 1.11,
       },
       radius: 240 * 1.11
     }
   },
   {
-    description: 'Yellow large flower with stem',
-    keyColour: '',
-    start: 21.4,
-    stop: 30.7,
+    description: 'Yellow large flower with stamen',
+    start: 37.3,
+    stop: 50.1,
     pie: {
       centre: {
         left: 610 * 1.11,
-        top: 382 * 1.11,
+        top: 400 * 1.11,
       },
       radius: 333 * 1.11
     }
   },
   {
     description: 'Pink rose',
-    keyColour: '',
-    start: 31.2,
-    stop: 39.8,
+    start: 52,
+    stop: 68.2,
     pie: {
       centre: {
-        left: 685 * 1.11,
+        left: 665 * 1.11,
         top: 345 * 1.11,
       },
       radius: 260 * 1.11
@@ -53,35 +49,32 @@ flowers = [
   },
   {
     description: 'Yellow rose flat',
-    keyColour: '',
-    start: 40.2,
-    stop: 48,
+    start: 69.3,
+    stop: 84.5,
     pie: {
       centre: {
-        left: 630 * 1.11,
-        top: 375 * 1.11,
+        left: 620 * 1.11,
+        top: 370 * 1.11,
       },
       radius: 270 * 1.11
     }
   },
   {
     description: 'Bright pink rose',
-    keyColour: '',
-    start: 48.5,
-    stop: 56.9,
+    start: 85.3,
+    stop: 101.8,
     pie: {
       centre: {
-        left: 695 * 1.11,
-        top: 285 * 1.11,
+        left: 650 * 1.11,
+        top: 255 * 1.11,
       },
       radius: 300 * 1.11
     }
   },
   {
     description: 'Red-orange rose',
-    keyColour: '',
-    start: 66.8,
-    stop: 76.5,
+    start: 102.7,
+    stop: 121.3,
     pie: {
       centre: {
         left: 570 * 1.11,
@@ -92,9 +85,8 @@ flowers = [
   },
   {
     description: 'Yellow flower large w/ stamens',
-    keyColour: '',
-    start: 77.2,
-    stop: 88,
+    start: 122.2,
+    stop: 139,
     pie: {
       centre: {
         left: 800,
@@ -105,9 +97,8 @@ flowers = [
   },
   {
     description: 'Pink rose with foliage',
-    keyColour: '',
-    start: 88.7,
-    stop: 101.5,
+    start: 140,
+    stop: 159.5,
     pie: {
       centre: {
         left: 630,
@@ -118,9 +109,8 @@ flowers = [
   },
   {
     description: 'Yellow rose',
-    keyColour: '',
-    start: 115,
-    stop: 125.5,
+    start: 160.2,
+    stop: 175.5,
     pie: {
       centre: {
         left: 735,
