@@ -35,8 +35,12 @@ $(document).ready(function() {
     if (video.currentFlower > -1 &&
         video.currentTime > flowers[video.currentFlower].stop &&
         !video.pieDying) {
-      video.dataSet = false;
-      destroyPieChart();
+      if (video.autoplaying) {
+        video.dataSet = false;
+        destroyPieChart();
+      } else {
+        $('#video')[0].pause();
+      }
     }
     
     video.currentFlower = getFlowerByTime(video.currentTime);

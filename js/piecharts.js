@@ -55,17 +55,6 @@ function extractFundingData() {
   });
 }
 
-function setData() {
-  if (video.autoplaying) {
-    getRandomFundingData();
-  } else {
-    fundingCurrentData.name = getRandomFunder();
-    fundingCurrentData.data = getFundingByFunder(fundingCurrentData.name);
-    fundingCurrentData.name = getRandomTheme();
-    fundingCurrentData.data = getFundingByTheme(fundingCurrentData.name);
-  }
-}
-
 function createPieChart() {
   video.pieCreated = true;
   
@@ -95,7 +84,9 @@ function destroyPieChart() {
   $('#chart-holder').fadeOut(500, function() {
     video.pieDying = false;
     video.pieCreated = false;
-    pieChart.destroy();
+    if (typeof pieChart !== 'undefined') {
+      pieChart.destroy();
+    }
   });
 }
 
