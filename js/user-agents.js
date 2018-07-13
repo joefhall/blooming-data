@@ -24,6 +24,12 @@ if (document.documentMode || /Edge/.test(navigator.userAgent)) {
   window.alert('Live beautiful. This visualisation looks better on any browser except Internet Explorer and Edge.');
 }
 
+if ( /^((?!chrome|android).)*safari/i.test(navigator.userAgent)) {
+  $(document).ready(function() {
+    $('#chart-holder').css('mix-blend-mode', 'darken');
+  });
+}
+
 function zoomOutMobile() {
   var viewport = document.querySelector('meta[name="viewport"]');
 
