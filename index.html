@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=0.5">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>User-generated organisations - Joe Hall - 360 Giving data visualisation challenge</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -16,22 +16,35 @@
   <script src="js/flowers.js"></script>
   <script src="js/funding.js"></script>
   <script src="js/jquery.nice-select.js"></script>
+  <script src="js/loading.js"></script>
   <script src="js/piecharts.js"></script>
   <script src="js/ui.js"></script>
+  <script src="js/user-agents.js"></script>
   <script src="js/video.js"></script>
 </head>
 <body class="bg-black">
-  
-  <script>
-//     for (var i = 0; i < pieChartOptions.colours.length; i++) {
-//       document.write('<span style="background-color: ' + pieChartOptions.colours[i] + ';">' + pieChartOptions.colours[i] + '</span> ');
-//     }
-  </script>
   
   <div class="container-fluid h-100">
     
     <div class="row w-100 h-100 justify-content-center align-items-center">
       <div id="vis-holder" class="col-xs-12 visualisation position-relative">
+        <div id="loading" class="position-absolute visualisation">
+          <div class="container-fluid h-100">
+            <div class="row w-100 h-100 justify-content-center align-items-center">
+              <div id="loading-message">
+                <h1 class="text-center text-white">
+                  Loading
+                </h1>
+                <img src="img/loading.gif" alt="Loading">
+              </div>
+              <div id="start">
+                <button id="start-button">
+                  Start
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
         <div id="controls" class="position-absolute">
           <div id="controls-title">
             User-led organisations
@@ -61,7 +74,7 @@
             </button>
           </div>
         </div>
-        <video id="video" muted="true" class="visualisation position-absolute" poster="" autoplay playsinline>
+        <video id="video" muted="true" class="visualisation position-absolute" poster="" playsinline>
           <source src="video/flowers-blooming.mp4" type="video/mp4" poster="data:image/gif,AAAA">
         </video>
         <div id="chart-holder" class="position-absolute">

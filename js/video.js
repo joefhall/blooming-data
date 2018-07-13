@@ -20,10 +20,6 @@ function getFlowerByTime(time) {
 }
 
 $(document).ready(function() {
-  $('#video').on('canplay', function() {
-    $('#video')[0].play();
-  });
-  
   $('#video').on('timeupdate', function() {
     video.currentTime = this.currentTime;
     

@@ -20,6 +20,19 @@ html, body, .ui-widget {
   overflow: hidden;
 }
 
+#loading {
+  z-index: 200;
+  background-color: black;
+}
+
+#start {
+  display: none;
+}
+
+#start-button {
+  font-size: 2rem !important;
+}
+
 #controls {
   z-index: 100;
   opacity: 1;
@@ -75,8 +88,8 @@ button.highlighted {
 }
 
 button.highlighted .ui-icon-pause {
-    -webkit-filter: brightness(200%);
-    filter: brightness(200%);
+  -webkit-filter: brightness(200%);
+  filter: brightness(200%);
 }
 
 #chart-holder {
