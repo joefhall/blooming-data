@@ -78,19 +78,6 @@ flowers = [
     }
   },
   {
-    description: 'White rose',
-    keyColour: '',
-    start: 57.3,
-    stop: 66.3,
-    pie: {
-      centre: {
-        left: 705 * 1.11,
-        top: 450 * 1.11,
-      },
-      radius: 210 * 1.11
-    }
-  },
-  {
     description: 'Red-orange rose',
     keyColour: '',
     start: 66.8,
@@ -127,19 +114,6 @@ flowers = [
         top: 360,
       },
       radius: 340
-    }
-  },
-  {
-    description: 'Sticky pink',
-    keyColour: '',
-    start: 102.5,
-    stop: 114.3,
-    pie: {
-      centre: {
-        left: 800,
-        top: 445,
-      },
-      radius: 540
     }
   },
   {

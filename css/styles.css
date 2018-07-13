@@ -20,7 +20,7 @@ html, body {
 #controls {
   z-index: 100;
   opacity: 1;
-  top: 100px;
+  top: 540px;
   left: 100px;
   font-size: 40px;
   color: white;
@@ -28,6 +28,12 @@ html, body {
 
 #controls-themes, #controls-funders, .nice-select {
   font-size: 20px !important;
+}
+
+.nice-select {
+  border: none !important;
+  border-bottom: dashed 1px white !important;
+  margin-bottom: -14px !important;
 }
 
 .nice-select, .nice-select .list {
