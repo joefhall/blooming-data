@@ -23,7 +23,6 @@ pieChartOptions = {
       enabled: false,
       custom: function(tooltipModel) {
         if (tooltipModel.hasOwnProperty('body')) {
-          console.log(tooltipModel.body[0].lines);
           var tooltipText = tooltipModel.body[0].lines[0].split(': ');
           $('#chart-tooltip').text(tooltipText[0] + ': £' + parseInt(tooltipText[1]).toLocaleString());
           $('#chart-tooltip').show();
@@ -56,10 +55,20 @@ function extractFundingData() {
   });
 }
 
+function setData() {
+  if (video.autoplaying) {
+    getRandomFundingData();
+  } else {
+    fundingCurrentData.name = getRandomFunder();
+    fundingCurrentData.data = getFundingByFunder(fundingCurrentData.name);
+    fundingCurrentData.name = getRandomTheme();
+    fundingCurrentData.data = getFundingByTheme(fundingCurrentData.name);
+  }
+}
+
 function createPieChart() {
   video.pieCreated = true;
   
-  getRandomFundingData();
   extractFundingData();
   
   pieChartOptions.colours = shuffleArray(pieChartOptions.colours);

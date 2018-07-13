@@ -42,7 +42,6 @@ function getAllFunders() {
 
 function getAllThemes() {
   for (var i = 0; i < funding.length; i++) {
-    console.log(funding[i].theme, themes, $.inArray(funding[i].theme, themes));
     if ($.inArray(funding[i].theme, themes) === -1) {
       themes.push(funding[i].theme);
     }
@@ -329,7 +328,7 @@ $(document).ready(function() {
   
   for (var j = 0; j < themes.length; j++) {
     $('#themes').append($('<option>', {
-      value: fundingThemes[themes[j]],
+      value: themes[j],
       text: fundingThemes[themes[j]].toLowerCase()
     }));
   }

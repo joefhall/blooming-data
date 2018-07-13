@@ -6,15 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=0.5">
   <title>User-generated organisations - Joe Hall - 360 Giving data visualisation challenge</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <link href="https://fonts.googleapis.com/css?family=Kanit:100" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/nice-select.css">
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
   <script src="js/flowers.js"></script>
   <script src="js/funding.js"></script>
   <script src="js/jquery.nice-select.js"></script>
   <script src="js/piecharts.js"></script>
+  <script src="js/ui.js"></script>
   <script src="js/video.js"></script>
 </head>
 <body class="bg-black">
@@ -34,14 +37,14 @@
             User-led organisations
           </div>
           <div id="controls-themes" class="mb-3">
-            run by 
+            for 
             <div class="d-inline-block">
               <select id="themes">
                 <option value="">anyone</option>
               </select>
             </div>
           </div>
-          <div id="controls-funders">
+          <div id="controls-funders" class="mb-4">
             funded by 
             <div class="d-inline-block">
               <select id="funders">
@@ -49,15 +52,23 @@
               </select>
             </div>
           </div>
-          
+          <div id="controls-buttons">
+            <button id="update-button" disabled>
+              Show
+            </button>
+            <button id="autoplay-all-button" class="highlighted">
+              Autoplay all
+            </button>
+          </div>
         </div>
-        <video id="video" muted="true" class="visualisation position-absolute" poster="" controls autoplay playsinline>
+        <video id="video" muted="true" class="visualisation position-absolute" poster="" autoplay playsinline>
           <source src="video/flowers-blooming.mp4" type="video/mp4" poster="data:image/gif,AAAA">
         </video>
         <div id="chart-holder" class="position-absolute">
           <canvas id="chart"></canvas>
         </div>
         <div id="chart-tooltip" class="position-absolute">
+          Move mouse over data to see details
         </div>
       </div>
     </div>
