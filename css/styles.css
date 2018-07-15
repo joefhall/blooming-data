@@ -9,6 +9,7 @@ html, body, .ui-widget {
 
 a {
   color: white !important;
+  text-decoration: underline;
 }
 
 .bg-black {
@@ -112,4 +113,9 @@ button.highlighted .ui-icon-pause {
   color: white;
   top: 650px;
   left: 500px;
+}
+
+#credits {
+  color: white;
+  opacity: 0.3;
 }
