@@ -23,11 +23,6 @@ $(document).ready(function() {
   $('#video').on('timeupdate', function() {
     video.currentTime = this.currentTime;
     
-    if (video.currentFlower === 0 &&
-        video.currentTime > flowers[video.currentFlower].start) {
-      $('#chart-tooltip').hide();
-    }
-    
     if (video.currentFlower > -1 &&
         video.currentTime > flowers[video.currentFlower].stop &&
         !video.pieDying) {

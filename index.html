@@ -74,6 +74,11 @@
             </button>
           </div>
         </div>
+        <div id="audio-controls" class="position-absolute">
+          <button id="audio-button" class="highlighted">
+            Background music
+          </button>
+        </div>
         <video id="video" muted="true" class="visualisation position-absolute" poster="" playsinline>
           <source src="video/flowers-blooming.mp4" type="video/mp4" poster="data:image/gif,AAAA">
         </video>
@@ -94,10 +99,12 @@
         <a href="https://www.youtube.com/watch?v=x9dfbFbGCdA" target="_blank">Awesome Video</a>.
       </div>
     </div>
-    
-    
-    
+
   </div>
+  
+  <audio id="background-music" autoplay loop preload="none">
+    <source src="audio/background-music.mp3" type="audio/mpeg">
+  </audio>
   
 </body>
 </html>

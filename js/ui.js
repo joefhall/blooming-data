@@ -77,6 +77,21 @@ $(document).ready(function() {
       $('#video')[0].play();
     }
   });
+  
+  $('#audio-button').button({
+    icons: {
+        primary: 'ui-icon-pause'
+    }
+  }).on('click', function () {
+    $('.ui-button-icon', this).toggleClass('ui-icon-pause ui-icon-play');
+    $(this).toggleClass('highlighted');
+    
+    if ($('#background-music')[0].paused) {
+      $('#background-music')[0].play();
+    } else {
+      $('#background-music')[0].pause();
+    }
+  });
 });
 
 function updateSelects() {

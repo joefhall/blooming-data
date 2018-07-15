@@ -40,10 +40,16 @@ a {
 
 #controls {
   z-index: 100;
-  opacity: 1;
   top: 50px;
-  left: 100px;
+  left: 50px;
   font-size: 40px;
+  color: white;
+}
+
+#audio-controls {
+  z-index: 100;
+  top: 650px;
+  left: 50px;
   color: white;
 }
 
