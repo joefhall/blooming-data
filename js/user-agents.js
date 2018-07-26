@@ -13,6 +13,11 @@ function isMobile() {
   }
 }
 
+function isTablet() {
+  var userAgent = navigator.userAgent.toLowerCase();
+  return /(ipad|tablet|(android(?!.*mobile))|(windows(?!.*phone)(.*touch))|kindle|playbook|silk|(puffin(?!.*(IP|AP|WP))))/.test(userAgent);
+}
+
 function isIOS() {
   return /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 }
@@ -24,11 +29,23 @@ function iOSversion() {
   }
 }
 
-if (isMobile()) {
+function isSafari() {
+  return /Safari/.test(navigator.userAgent);
+}
+
+function isChrome() {
+  return /Chrome/.test(navigator.userAgent);
+}
+
+if (isMobile() || isTablet()) {
   if (isIOS() && iOSversion()[0] < 10) {
-    window.alert('Sorry, you need a slightly newer iPhone to see this, or use a computer.');
+    window.alert('Sorry, you need a slightly newer version of iOS to see this, or use a computer.');
     $('#vis-holder'.hide());
-  } else {
+  } else if (!isSafari() && !isChrome()) {
+    $(document).ready(function() {
+      $('#warning').text('Most browsers work great. If you happen to have any problems with this one, please try in another browser like Chrome or Safari.');
+    });
+   } else {
     $(document).ready(function() {
       $('#warning').text('Live beautiful. This visualisation looks better on a bigger screen.');
     });
