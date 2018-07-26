@@ -32,9 +32,17 @@ a {
 
 #start {
   display: none;
+  text-align: center;
 }
 
 #start-button {
+  font-size: 2rem !important;
+  margin-bottom: 50px;
+}
+
+#warning {
+  display: block;
+  color: white !important;
   font-size: 2rem !important;
 }
 

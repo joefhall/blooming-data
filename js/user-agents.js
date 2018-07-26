@@ -29,7 +29,9 @@ if (isMobile()) {
     window.alert('Sorry, you need a slightly newer iPhone to see this, or use a computer.');
     $('#vis-holder'.hide());
   } else {
-    window.alert('Live beautiful. This visualisation looks better on a bigger screen.');
+    $(document).ready(function() {
+      $('#warning').text('Live beautiful. This visualisation looks better on a bigger screen.');
+    });
   }
 }
 
@@ -37,7 +39,9 @@ if (document.documentMode || /Edge/.test(navigator.userAgent)) {
   $(document).ready(function() {
     $('#chart-holder').css('opacity', '0.5');
   });
-  window.alert('Live beautiful. This visualisation looks better on any browser except Internet Explorer and Edge.');
+  $(document).ready(function() {
+    $('#warning').text('Live beautiful. This visualisation looks better on browsers other than Internet Explorer and Edge.');
+  });
 }
 
 if ( /^((?!chrome|android).)*safari/i.test(navigator.userAgent)) {
