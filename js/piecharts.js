@@ -104,3 +104,15 @@ function shuffleArray(array) {
   
   return array;
 }
+
+function getColourByLabel(label) {
+  var index;
+  
+  for (var i = 0; i < data.labels.length; i++) {
+    if (data.labels[i] === label) {
+      index = i;
+    }
+  }
+  
+  return data.datasets[0].backgroundColor[index];
+}
