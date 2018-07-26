@@ -22,6 +22,7 @@ function getFlowerByTime(time) {
 $(document).ready(function() {
   $('#video').on('timeupdate', function() {
     video.currentTime = this.currentTime;
+    video.currentFlower = getFlowerByTime(video.currentTime);
     
     if (video.currentFlower > -1 &&
         video.currentTime > flowers[video.currentFlower].stop &&
@@ -33,8 +34,6 @@ $(document).ready(function() {
         $('#video')[0].pause();
       }
     }
-    
-    video.currentFlower = getFlowerByTime(video.currentTime);
     
     if (video.currentFlower > -1 &&
         video.currentTime > flowers[video.currentFlower].start && 

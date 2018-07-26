@@ -11,12 +11,12 @@ $(document).ready(function() {
   setNiceSelectOptions();
   
   $('#themes').on('change', function () {
-    video.dataSet = true;
-    setData();
-    
     $('#funders').val(null);
     $('select').niceSelect('update');
     setNiceSelectOptions();
+    
+    video.dataSet = true;
+    setData();
     
     if ($('#themes').val() || $('#funders').val()) {
       $('#update-button').addClass('highlighted');
@@ -28,12 +28,12 @@ $(document).ready(function() {
   });
   
   $('#funders').on('change', function () {
-    video.dataSet = true;
-    setData();
-    
     $('#themes').val(null);
     $('select').niceSelect('update');
     setNiceSelectOptions();
+    
+    video.dataSet = true;
+    setData();
     
     if ($('#themes').val() || $('#funders').val()) {
       $('#update-button').addClass('highlighted');
@@ -48,15 +48,10 @@ $(document).ready(function() {
     $(this).toggleClass('highlighted');
     $(this).button('disable');
     
-    if (video.currentFlower > -1 &&
-        video.currentTime < (flowers[video.currentFlower].start + 2)) {
-      $('#video')[0].play();
-    } else {
-      destroyPieChart();
-      var nextFlower = video.currentFlower < (flowers.length -1) ? video.currentFlower + 1 : 0;
-      $('#video')[0].currentTime = flowers[nextFlower].start;
-      $('#video')[0].play();
-    }
+    destroyPieChart();
+    var nextFlower = video.currentFlower < (flowers.length -1) ? video.currentFlower + 1 : 0;
+    $('#video')[0].currentTime = flowers[nextFlower].start;
+    $('#video')[0].play();
   });
   $('#update-button').button('disable');
   
@@ -73,7 +68,6 @@ $(document).ready(function() {
       $('#video')[0].pause();
     } else {
       video.autoplaying = true;
-      video.dataSet = false;
       $('#video')[0].play();
     }
   });
@@ -111,7 +105,7 @@ function updateSelects() {
 }
 
 function setData() {
-  fundingCurrentData.type = $('#themes').val() ? 'theme' : 'funder';
+  fundingCurrentData.type = $('#themes').val() !== '' ? 'theme' : 'funder';
   
   switch (fundingCurrentData.type) {
     case 'funder':
